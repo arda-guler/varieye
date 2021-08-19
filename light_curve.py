@@ -1,5 +1,4 @@
-# TESS LIGHT CURVE READER
-# (TRANSITING EXOPLANET SURVEY SATELLITE)
+# LIGHT CURVE READER
 
 import astropy.io.fits as pyfits
 import matplotlib.pyplot as plt
@@ -115,5 +114,5 @@ def display_light_curve():
     plt.ylabel("Flux")
     plt.show()
 
-print("TESS LIGHT CURVE READER")
+print("LIGHT CURVE DISPLAYER")
 display_light_curve()
