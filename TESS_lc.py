@@ -32,7 +32,11 @@ def display_light_curve():
 
     # Print some basic data, not everyone needs to see all
     # the stuff in the header
-    print("\nOBJECT:", hdu.header["OBJECT"])
+    try:
+        print("\nOBJECT:", hdu.header["OBJECT"])
+    except KeyError:
+        pass
+        
     print("Celestial reference frame:", hdu.header["RADESYS"])
     print("Right ascension:", hdu.header["RA_OBJ"])
     print("Declination:", hdu.header["DEC_OBJ"])
@@ -43,8 +47,11 @@ def display_light_curve():
     print("Observation start date:", date_start)
     print("Observation end date:", date_end)
 
-    print("\nTelescope:", hdu.header["TELESCOP"])
-    print("Instrument:", hdu.header["INSTRUME"])
+    try:
+        print("\nTelescope:", hdu.header["TELESCOP"])
+        print("Instrument:", hdu.header["INSTRUME"])
+    except KeyError:
+        pass
 
     light_curve_data = hdu.data
 
